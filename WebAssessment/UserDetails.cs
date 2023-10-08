@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿//using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace WebAssessment
 
 {
     public class UserDetails
     {
- 
         public int Id { get; set; }
 
         [Required]
@@ -15,7 +16,7 @@ namespace WebAssessment
         [EmailAddress(ErrorMessage = "Invalid email address.")]
         public string Mail { get; set; }
         [Required]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Phone number can only contain numbers.")]
+        [RegularExpression(@"^\d{1,12}$", ErrorMessage = "Phone number can only contain numbers and less than 12 numbers.")]
         public string PhoneNumber { get; set; }
         public string Skillsets { get; set; }
         public string Hobby { get; set; }

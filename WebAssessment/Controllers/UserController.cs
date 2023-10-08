@@ -19,6 +19,8 @@ namespace WebAssessment.Controllers
 
         // GET: api/users
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<UserDetails>), 200)] // 200 OK
+        [ProducesResponseType(404)] // Not Found
         public IActionResult Get()
         {
             var users = _context.Users.ToList();
@@ -27,6 +29,8 @@ namespace WebAssessment.Controllers
 
         // POST: api/users
         [HttpPost]
+        [ProducesResponseType(typeof(IEnumerable<UserDetails>), 200)] // 200 OK
+        [ProducesResponseType(404)] // Not Found
         public IActionResult Post([FromBody] UserDetails user)
         {
             _context.Users.Add(user);
@@ -36,6 +40,8 @@ namespace WebAssessment.Controllers
 
         // PUT: api/users/5
         [HttpPut("{id}")]
+        [ProducesResponseType(typeof(IEnumerable<UserDetails>), 200)] // 200 OK
+        [ProducesResponseType(404)] // Not Found
         public IActionResult Put(int id, [FromBody] UserDetails user)
         {
             var existingUser = _context.Users.Find(id);
@@ -56,6 +62,8 @@ namespace WebAssessment.Controllers
 
         // DELETE: api/users/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(typeof(IEnumerable<UserDetails>), 200)] // 200 OK
+        [ProducesResponseType(404)] // Not Found
         public IActionResult Delete(int id)
         {
             var user = _context.Users.Find(id);
