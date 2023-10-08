@@ -13,7 +13,7 @@ Installation
 Clone the repository:
 
 
-git clone https://github.com/yourusername/cdn-api.git
+git clone (https://github.com/PhyMage/WebAssessment.git)
 Navigate to the project directory:
 
 
