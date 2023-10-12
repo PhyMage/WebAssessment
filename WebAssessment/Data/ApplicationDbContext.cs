@@ -9,6 +9,7 @@ namespace WebAssessment.Data
         }
 
         public DbSet<UserDetails> Users { get; set; }
+        public DbSet<BankAccount> BankAccounts { get; set; }
     }
 
 }
